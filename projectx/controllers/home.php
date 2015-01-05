@@ -1,38 +1,34 @@
 <?php
 namespace projectx\controllers;
 use projectx\core\controller;
-use projectx\core\vendor\auth\authentication;
+use projectx\core\vendor\auth\acl;
 
 
 class home extends controller
 {
-    protected $auth;
+    protected $acl;
     protected $message;
 
 
     public function index()
     {
-        $username = 'bart@cs-hosting.nl';
-        $password = 'kwibus';
-        $this->auth = new authentication;
+        $actions = array(
+                        'read',
+                        'write',
+                        'publish',
+                        'delete'
+                    );
+
+        $this->acl = new acl($actions);
         
-        //$data = $this->auth->get_auth('users', $username, $password);
+        $this->acl->addPermission('read');
+        $this->acl->addPermission('write');
+        $this->acl->addPermission('delete');
+        $this->acl->addPermission('publish');
         
-        //if($data == false)
-        //{
-          //  echo 'Something goes wrong with auth';
-        //}
+        $code = $this->acl->evaluate();
         
+        echo $code;
         
-        if($this->auth->is_auth() === FALSE)
-        {
-            echo 'Not logged in!';
-        }
-        else
-        {
-            echo 'logged in!';
-        }
-        $this->auth->remove_auth();
-         // $this->view('home');
-    }  
+    }
 }
