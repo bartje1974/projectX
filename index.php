@@ -11,7 +11,7 @@ $app = new app;
 
 $eind_tijd = microtime() - $begin_tijd;
 $eind_mem = memory_get_usage() - $begin_mem;
-
+echo '<br />';
 echo "Tijd: <strong>", round($eind_tijd, 6), "</strong> seconde<br />";
 echo "Geheugen: <strong>", round((($eind_mem / 1024) / 1024), 6), "</strong> MB <br />"; 
 //echo '<pre>';
