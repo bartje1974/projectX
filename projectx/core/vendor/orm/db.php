@@ -22,10 +22,7 @@ class db {
 
         $stmt = $this->db->prepare($sql);
 
-        $stmt->execute(array_combine(explode(',', $bind), array_values($data)));
-
-        //$count = $foo->rowCount();
-        //echo $count;       
+        $stmt->execute(array_combine(explode(',', $bind), array_values($data)));      
     }
 
     public function update($table, $data, $idname, $where) {
