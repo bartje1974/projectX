@@ -1,14 +1,26 @@
 <?php
 namespace projectx\core\vendor\auth;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of acl
- *
+ * $actions = array(
+                        'read',
+                        'write',
+                        'publish',
+                        'delete',
+                        'mail'
+                    );
+
+        $this->acl = new acl($actions);
+        
+        $this->acl->addPermission('read');
+        $this->acl->addPermission('write');
+        $this->acl->addPermission('delete');
+        $this->acl->addPermission('publish');
+        
+        
+        $code = $this->acl->evaluate();
+        
+        echo $code;
  * @author bart
  */
 class acl 
