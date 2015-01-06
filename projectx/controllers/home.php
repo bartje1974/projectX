@@ -6,6 +6,6 @@ class home extends controller
 {
     public function index()
     {
-               
+       
     }
 }
