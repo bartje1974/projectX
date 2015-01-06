@@ -2,6 +2,7 @@
 namespace projectx\core\vendor\auth;
 /**
  * Description of acl
+ * use projectx\core\vendor\auth\acl;
  * $actions = array(
                         'read',
                         'write',
