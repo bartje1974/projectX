@@ -39,7 +39,6 @@ class cart
     public function remove($itemID) 
     {   
         unset($_SESSION['items'][$itemID]);
-        //$this->syncSessionToCart();
     } 
      
     public function update($itemID, $newQuantity) 
@@ -49,7 +48,6 @@ class cart
             if ((int)$newQuantity <= 0) 
             { 
                 $this->remove($itemID); 
-                //echo 'remove';
             } 
             else 
             { 
