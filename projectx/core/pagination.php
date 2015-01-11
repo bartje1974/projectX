@@ -3,7 +3,7 @@ namespace projectx\core;
 /*
  * PHP Pagination Class
  * create a new object
- * $pages = new Paginator('10','p'); <-p is the $_GET (?p=) so you can change that to your own flavor
+ * $pages = new pagination('10','p'); <-p is the $_GET (?p=) so you can change that to your own flavor
  * set the total records, calling a method to get the number of records from a model
  * $pages->set_total( $this->_model->get_all_count() );
  * calling a method to get the records with the limit set
