@@ -13,7 +13,7 @@ for example shared hosting. The framework is still in development so not yet rea
 - Works with PDO, so you can talk to severals databases.
 
 ## System Requirements.
-- A Web server, apache with a database and PHP version greater than PHP5.4 is required.
+- A Web server, apache with a database and PHP version greater than 5.4 is required.
 - To use SEO friendly urls ModRewrite must be enabeled.
 
 ## How does it work?
