@@ -64,7 +64,7 @@ class cart
         } 
     } 
      
-    public function itemsInBasket() 
+    public function inbasket() 
     { 
         if (isset($_SESSION['items'])) 
         { 
@@ -74,7 +74,7 @@ class cart
         } 
     } 
      
-    public function emptyCart() 
+    public function delete() 
     { 
         unset($this->items); 
          
@@ -84,7 +84,7 @@ class cart
         $this->syncSessionToCart(); 
     } 
 
-    public function getContents() 
+    public function getcontents() 
     { 
         if (isset($_SESSION['items'])) 
         { 
@@ -92,7 +92,7 @@ class cart
         } 
     } 
 
-    public function getTotal() 
+    public function total() 
     { 
         if (isset($_SESSION['items'])) 
         { 

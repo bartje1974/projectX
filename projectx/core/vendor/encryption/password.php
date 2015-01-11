@@ -14,13 +14,13 @@ class password
         $this->_option = array(12);
     }
 
-    public function makepasswd( $passwordFromPost )
+    public function add( $passwordFromPost )
     {
        $hash = password_hash($passwordFromPost, PASSWORD_BCRYPT, $this->_option); 
        return $hash;
     }
     
-    public function getpasswd( $passwordFromPost, $hashedPasswordFromDB )
+    public function get( $passwordFromPost, $hashedPasswordFromDB )
     {
         if (password_verify($passwordFromPost, $hashedPasswordFromDB))
         {
@@ -32,7 +32,7 @@ class password
         }     
     }
     
-    public function CheckIfrehashNeeded($hashedPasswordFromDB)
+    public function needRehash($hashedPasswordFromDB)
     {
         if (password_needs_rehash($hashedPasswordFromDB, PASSWORD_BCRYPT, $this->_option)) 
         {

@@ -13,9 +13,11 @@ class shop extends controller
 
     public function index()
     {
-        $this->cart->add('SKU01012015', 45.33, 'boat', 2);
-        echo 'Aantal items in winkelwagen: '.$this->cart->itemsInBasket();
-        $items = $this->cart->getContents();
+        //$this->cart->add('SKU01012015', 45.33, 'boat', 2);
+        //$this->cart->add('SKU10230032', 4.21, 'duck',  4);
+        $this->cart->delete();
+        echo 'Aantal items in winkelwagen: '.$this->cart->inbasket();
+        $items = $this->cart->getcontents();
         echo '<table>';
         foreach ($items as $v)
         {
@@ -25,7 +27,7 @@ class shop extends controller
             echo '</tr>';
         }
         echo '<tr>';
-            echo '<td></td>'.'<td>Totaal &euro;</td>'.'<td align="right">'.$this->cart->getTotal().'</td>';
+            echo '<td></td>'.'<td>Totaal &euro;</td>'.'<td align="right">'.$this->cart->total().'</td>';
             echo '</tr>';
         echo '</table>';
     }
