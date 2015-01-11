@@ -139,6 +139,6 @@ class acl
     private function invalidAction()
     {
         throw new Exception('INVALID ACTION');
-        return false;
+        //return false;
     }
 }
