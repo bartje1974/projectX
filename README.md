@@ -43,8 +43,9 @@ In the near future will still be added to classes there.
 I do not think so.
 Oh yes, there is one more thing: The license.
 You are free to hack the code to use.
-Does my name remain there? No, maybe you just send me a message to tell you to use the framework. (or portions thereof)
-All code I've written with inspiration after searching the internet on forums and such. The most I have rewritten my own taste and ideas how I think they should work.
+Does my name need to remain in the code? No, feel free to use it as you want.
+All code I've written with inspiration after searching the internet on forums. 
+The most I have rewritten my own taste and ideas how I think they should work.
 
 ## The manual?
 If the framework is ready for a real application, I will make a clear manual.
