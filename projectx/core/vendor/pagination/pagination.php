@@ -12,6 +12,7 @@ namespace projectx\core\vendor\pagination;
  * $data['page_links'] = $pages->page_links();
  * $this->view('viewname', $data);
  */
+
 class pagination{
 
 
