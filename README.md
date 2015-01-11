@@ -23,8 +23,6 @@ Simple. :)
 - Adjust the config.ini in the folder /projectx/core/config/config.ini.
 - The framework is ready for action.
 
-
-
 ## Bonus!
 The actual framework is actually composed of 10 files including the config file to make a cool application.
 But i am not the most difficult guy. 
