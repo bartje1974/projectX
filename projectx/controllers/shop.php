@@ -1,14 +1,16 @@
 <?php
 namespace projectx\controllers;
+
 use projectx\core\controller;
 use projectx\core\vendor\cart\cart;
 
 class shop extends controller
 {
     protected $cart;
-    
-    public function __construct() {
-        $this->cart = new cart;
+
+    public function __construct()
+    {
+        $this->cart = new cart();
     }
 
     public function index()
@@ -19,17 +21,14 @@ class shop extends controller
         echo 'Aantal items in winkelwagen: '.$this->cart->inbasket();
         $items = $this->cart->getcontents();
         echo '<table>';
-        foreach ($items as $v)
-        {
-            
+        foreach ($items as $v) {
             echo '<tr>';
             echo '<td>'.$v['name'].'</td>'.'<td>'.$v['qty'].'</td>'.'<td align="right">'.$v['price'].'</td>';
             echo '</tr>';
         }
         echo '<tr>';
-            echo '<td></td>'.'<td>Totaal &euro;</td>'.'<td align="right">'.$this->cart->total().'</td>';
-            echo '</tr>';
+        echo '<td></td>'.'<td>Totaal &euro;</td>'.'<td align="right">'.$this->cart->total().'</td>';
+        echo '</tr>';
         echo '</table>';
     }
-    
 }

@@ -6,12 +6,11 @@ namespace projectx\core;
  *
  * @author bart
  */
-class view 
+class view
 {
-    public function render($file, $variables = '') 
+    public function render($file, $variables = '')
     {
-        if(is_array($variables))
-        {
+        if (is_array($variables)) {
             extract($variables);
         }
         ob_start();

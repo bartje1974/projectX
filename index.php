@@ -5,4 +5,4 @@ ini_set("display_errors", 1);
 require_once 'projectx/core/autoload.php';
 
 use projectx\core\app;
-$app = new app;
+$app = new app();

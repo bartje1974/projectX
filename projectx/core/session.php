@@ -1,5 +1,6 @@
 <?php
 namespace projectx\core;
+
 /*
  * $session = new session;
  * $session->start();
@@ -12,60 +13,50 @@ namespace projectx\core;
 class session
 {
     private $_sess = false;
-    
+
     public function start()
     {
-        if($this->_sess == false)
-        {
+        if ($this->_sess == false) {
             session_start();
             $this->_sess = true;
-        }     
+        }
     }
-
 
     // $_SESSION[$key]= $value;
     public function set($key, $value)
     {
         $_SESSION[$key] = $value;
     }
-    
+
     public function get($key, $secondkey = false)
     {
-        if($secondkey == true)
-        {
-            if(isset($_SESSION[$key][$secondkey]))
-            {
+        if ($secondkey == true) {
+            if (isset($_SESSION[$key][$secondkey])) {
                 return $_SESSION[$key][$secondkey];
             }
-        }
-        else
-        {
-            if(isset($_SESSION[$key]))
-            {
+        } else {
+            if (isset($_SESSION[$key])) {
                 return $_SESSION[$key];
             }
         }
-        
-        return false;  
+
+        return false;
     }
-    
+
     public function destroy()
     {
-        if($this->_sess == true)
-        {
+        if ($this->_sess == true) {
             session_unset();
             session_destroy();
         }
-        
     }
-    
+
     public function display()
     {
-        if(isset($_SESSION))
-        {
+        if (isset($_SESSION)) {
             echo '<pre>';
-                print_r($_SESSION);
+            print_r($_SESSION);
             echo '</pre>';
-        }   
-    }  
+        }
+    }
 }
