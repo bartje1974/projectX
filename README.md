@@ -35,6 +35,7 @@ So have some additional classes in the vendor directory that makes your life as 
 - Encryption a class (for passwords).
 - A messasge class for beautiful messages.
 - A spam buster clas.
+- A pagination class.
 - In the near future will still be added to classes there.
 
 ## Have I forgotten something?
