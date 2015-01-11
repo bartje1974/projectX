@@ -1,5 +1,5 @@
 <?php
-namespace projectx\core\vendor\pagination;
+namespace projectx\core;
 /*
  * PHP Pagination Class
  * create a new object
