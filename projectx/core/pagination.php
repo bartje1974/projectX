@@ -6,11 +6,11 @@ namespace projectx\core;
  * create a new object
  * $pages = new pagination('10','p'); <-p is the $_GET (?p=) so you can change that to your own flavor
  * set the total records, calling a method to get the number of records from a model
- * $pages->set_total( $this->_model->get_all_count() );
+ * $pages->setTotal( $this->_model->get_all_count() );
  * calling a method to get the records with the limit set
- * $data['records'] = $this->_model->get_all( $pages->get_limit() );
+ * $data['records'] = $this->_model->get_all( $pages->getLimit() );
  * create the nav menu
- * $data['page_links'] = $pages->page_links();
+ * $data['page_links'] = $pages->pageLinks();
  * $this->view('viewname', $data);
  */
 
@@ -29,7 +29,7 @@ class pagination
         $this->set_instance();
     }
 
-    public function get_start()
+    public function getStart()
     {
         return ($this->_page * $this->_perPage) - $this->_perPage;
     }
@@ -40,17 +40,17 @@ class pagination
         $this->_page = ($this->_page == 0 ? 1 : $this->_page);
     }
 
-    public function set_total($_totalRows)
+    public function setTotal($_totalRows)
     {
         $this->_totalRows = $_totalRows;
     }
 
-    public function get_limit()
+    public function getLimit()
     {
         return "LIMIT ".$this->get_start().",$this->_perPage";
     }
 
-    public function page_links($path = '?', $ext = null)
+    public function pageLinks($path = '?', $ext = null)
     {
         $adjacents = "2";
         $prev = $this->_page - 1;
