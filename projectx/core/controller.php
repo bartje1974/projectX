@@ -9,7 +9,7 @@ namespace projectx\core;
 class controller
 {
     protected $model;
-
+    
     public function model($model)
     {
         $use = '\\'.'projectx\models'.'\\'.$model;
