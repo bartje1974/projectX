@@ -3,25 +3,46 @@ namespace projectx\core\vendor\auth;
 /**
  * Description of acl
  * use projectx\core\vendor\auth\acl;
- * $actions = array(
-                        'read',
-                        'write',
-                        'publish',
-                        'delete',
-                        'mail'
-                    );
+ 
+ * /* List possible actions */
+$actions = array(
+    'read',
+    'write',
+    'publish',
+    'delete'
+);
 
-        $this->acl = new acl($actions);
-        
-        $this->acl->addPermission('read');
-        $this->acl->addPermission('write');
-        $this->acl->addPermission('delete');
-        $this->acl->addPermission('publish');
-        
-        
-        $code = $this->acl->evaluate();
-        
-        echo $code;
+/* Create a new object to generate a permissions set 
+$permissionGenerator = new ACL($actions);
+
+/* Add the permissions you want 
+$permissionGenerator->addPermission('read');
+$permissionGenerator->addPermission('write');
+$permissionGenerator->addPermission('delete');
+
+/* Remove the permissions you've changed your mind about
+$permissionGenerator->removePermission('read');
+
+/* And get an integer that correlates to the set of permissions you chose. This
+ * can be stored and associated with a user account.
+
+$code = $permissionGenerator->evaluate();
+
+
+/* Create an object and pass it a permissions code to test against 
+$ACL = new ACL($actions, $code);
+
+/* Get an array of possible actions you can test for 
+$actions = $ACL->getActions();
+
+/* Check which actions are allowed with the permissions code you passed in 
+foreach ($actions as $action) {
+    if($ACL->hasPermission($action)) {
+        echo $action . ' is allowed <br>';
+    }else{
+        echo $action . ' is NOT allowed <br>';
+    }
+}
  * @author bart
  */
 class acl 
